@@ -1,0 +1,46 @@
+.faq-panel__{
+	&block{
+		padding-bottom: 25px;
+	}
+}
+.faq-card__{
+	&item{
+		margin-bottom: 15px;
+		&:last-child{margin-bottom: 0;}
+	}
+	&heading{
+		font-weight: 700;
+		font-size: @b-fs;
+		line-height: @b-lh;
+		margin-bottom: 0;
+		a{	
+			display: inline-block;
+			position: relative;
+			padding-left: 20px;
+			&::before{
+				content: '';
+				position: absolute;
+				top: 9px;
+				left: 0;
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				background-color: @orange-light;
+				transition: @trs-site;
+			}
+			&, &:focus{
+				color: @b-color-h;
+			}
+			&[aria-expanded="true"],
+			&:hover{
+				color: @b-color-a;
+				&::before{
+					background-color: @b-color-a;
+				}
+			}
+		}		
+	}
+	&text{
+		padding: 10px 0 15px 20px;
+	}
+}

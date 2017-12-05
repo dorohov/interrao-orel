@@ -1,0 +1,52 @@
+.include-custom-font(
+	@family: @heliosC, 
+	@src-name: @heliosC, 
+	@weight: normal, 
+	@style: normal
+	){
+	@font-face{			
+		font-family: "@{family}";			
+		src:	url('@{url-path-fonts}/@{src-name}.woff2') format('woff2'),
+				url('@{url-path-fonts}/@{src-name}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;		
+	}
+}
+.include-custom-icon(@family: @icon, @weight: normal, @style: normal){
+	@font-face{			
+		font-family: "@{family}";			
+		src: url('@{url-path-fonts}/@{family}.woff') format('woff');
+		font-weight: @weight;
+		font-style: @style;		
+	}
+}
+.include-custom-font(
+	@family: @heliosC,
+	@src-name: @heliosC,
+	@weight: 400, 
+	@style: normal
+	);
+.include-custom-font(
+	@family: @heliosC,
+	@src-name: @heliosC-700,
+	@weight: 700, 
+	@style: normal
+	);
+.include-custom-font(
+	@family: @heliosC,
+	@src-name: @heliosC-700i,
+	@weight: 700, 
+	@style: italic
+	);
+.include-custom-font(
+	@family: @tahoma,
+	@src-name: @tahoma,
+	@weight: 400, 
+	@style: normal
+	);
+.include-custom-font(
+	@family: @tahoma,
+	@src-name: @tahoma-700,
+	@weight: 700, 
+	@style: normal
+	);

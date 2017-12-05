@@ -1,0 +1,24 @@
+<div class="{{block_prefix}}panel">
+	<div class="{{block_prefix}}row row  is--wrap  is--gutter  is--jcc">
+		<div class="{{block_prefix}}cols cols  is--cols-12  is--cols-screen-5">	
+			[[azbntple 
+				tpl="/src/block/site/default/page-header/heading.html" 
+				header_prefix="page-header__" 
+				header_mod="is--heading-lg"
+				header_level="h2"
+				header="Выберите район:"
+			]]	
+			<div class="{{block_prefix}}inner">
+				<div class="{{block_prefix}}elem">	
+					[[azbntple 
+						tpl="/src/block/site/default/contacts/panel.html" 
+						block_prefix="contacts-panel__" 
+					]]	
+				</div>
+			</div>
+		</div> 
+		<div class="{{block_prefix}}cols cols  is--cols-screen-7 is--cols-12">
+			<div class="contacts-panel__map" id="yandex-map"></div>
+		</div>
+	</div>
+</div>

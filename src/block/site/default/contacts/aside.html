@@ -1,0 +1,46 @@
+<div class="{{block_prefix}}block  {{block_mod}}">
+	<div class="{{block_prefix}}inner  {{block_mod}}">  
+		[[azbntple  
+			tpl="/src/block/site/default/page-header/group.html" 
+			header_prefix="page-header__" 
+			header_mod="{{block_heading_mod}}"
+			header_level="h4"
+			header="{{block_heading}}"
+			header_small_level="div"
+			header_small="{{block_heading_small}}"
+		]]
+
+		<div class="{{block_prefix}}decs">
+			<div class="{{block_prefix}}item">
+				[[azbntple 
+					tpl="/src/block/site/default/contacts/item-link.html" 
+					block_prefix="contact-item__"
+					block_mod="is--aside"
+					block_name="Телефон: {{contacts.press_phone}}"
+					block_link="tel:{{contacts.press_phone_tel}}"
+					block_attr="  "
+				]]			
+			</div>		
+			<div class="{{block_prefix}}item">
+				[[azbntple 
+					tpl="/src/block/site/default/contacts/item-link.html" 
+					block_prefix="contact-item__"
+					block_mod="is--aside"
+					block_name="Факс: {{contacts.press_fax}}"
+					block_link="tel:{{contacts.press_fax_tel}}"
+					block_attr="  "
+				]]			
+			</div>		
+			<div class="{{block_prefix}}item">
+				[[azbntple 
+					tpl="/src/block/site/default/contacts/item-link.html" 
+					block_prefix="contact-item__"
+					block_mod="is--aside"
+					block_name="Эл.почта: {{contacts.press_email}}"
+					block_link="mailto:{{contacts.press_email}}"
+					block_attr="  "
+				]]			
+			</div>
+		</div>
+	</div>
+</div>

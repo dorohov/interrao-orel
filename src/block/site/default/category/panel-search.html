@@ -1,0 +1,42 @@
+<div class="{{block_prefix}}panel">
+	<div class="{{block_prefix}}row row  is--wrap  is--gutter  is--jcc">
+		<div class="{{block_prefix}}cols cols  is--cols-screen-4  is--aside  is--search">
+			[[azbntple 
+				tpl="/src/block/site/default/form/panel-search.html" 
+				form_prefix="form-panel__"
+				form_mod="is--subscribe"
+				form_mod_form="is--cols-12" 
+				form_color="  "
+				form_heading="Поиск по сайту"
+				form_placeholder="Поиск по сайту"
+				form_heading_small="  "
+				form_id="fcab" 
+				form_btn_name="Искать"
+				form_btn_mod="is--subscribe"
+			]]
+		</div>
+		<div class="{{block_prefix}}cols cols  is--cols-12  is--cols-screen-8">
+			[[azbntple 
+				tpl="/src/block/site/default/breadcrumb/level1.html" 
+				bread_prefix="breadcrumb__"
+				bread_mod="is--heading"
+				level_1="{{block_breadcrumb}}" 
+			]]		
+			[[azbntple 
+				tpl="/src/block/site/default/page-header/heading.html" 
+				header_prefix="page-header__" 
+				header_mod="is--search"
+				header_level="h1"
+				header="{{block_heading}}"
+			]]
+			<div class="{{block_prefix}}inner">
+				<div class="{{block_prefix}}elem">								
+					[[azbntple 
+						tpl="/src/block/site/default/search/panel.html" 
+						block_prefix="search-panel__"
+					]]
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

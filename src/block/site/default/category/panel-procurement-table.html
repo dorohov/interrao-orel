@@ -1,0 +1,36 @@
+<div class="{{block_prefix}}panel">
+	<div class="{{block_prefix}}row row  is--wrap  is--gutter  is--jcc">
+		<div class="{{block_prefix}}cols cols  is--cols-12  is--cols-screen-12">
+			[[azbntple 
+				tpl="/src/block/site/default/breadcrumb/level2.html" 
+				bread_prefix="breadcrumb__"
+				bread_mod="is--heading  is--center"
+				level_1="Закупки" 
+				level_1_link="{{page.procurement}}" 
+				level_2="{{block_breadcrumb}}" 
+			]]		
+			[[azbntple 
+				tpl="/src/block/site/default/page-header/heading.html" 
+				header_prefix="page-header__" 
+				header_mod="is--heading  is--center  is--procurement"
+				header_level="h1"
+				header="{{block_heading}}"
+			]]
+			<div class="{{block_prefix}}inner">
+				<div class="{{block_prefix}}elem">									
+					[[azbntple 
+						tpl="/src/block/site/default/table/panel-procurement.html" 
+						block_prefix="table-block__"
+					]]	
+				</div>
+				<div class="{{block_prefix}}elem">	
+					[[azbntple 
+						tpl="/src/block/site/default/pagination/panel.html" 
+						block_prefix="pagination-panel__"
+						block_mod="is--center"
+					]]
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

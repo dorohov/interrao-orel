@@ -1,0 +1,39 @@
+<div class="{{block_prefix}}panel">
+	<div class="{{block_prefix}}row row  is--wrap  is--gutter  is--jcc">
+		<div class="{{block_prefix}}cols cols  is--cols-screen-4  is--aside">
+			[[azbntple 
+				tpl="/src/block/site/default/navbar/aside-goodknow.html" 
+				block_prefix="navbar-category__"
+			]]
+		</div>
+		<div class="{{block_prefix}}cols cols  is--cols-12  is--cols-screen-8">
+			[[azbntple 
+				tpl="/src/block/site/default/breadcrumb/level2.html" 
+				bread_prefix="breadcrumb__"
+				bread_mod="is--heading"
+				level_1="Полезно знать" 
+				level_1_link="{{page.goodknow}}" 
+				level_2="{{block_breadcrumb}}" 
+			]]		
+			[[azbntple 
+				tpl="/src/block/site/default/page-header/heading.html" 
+				header_prefix="page-header__" 
+				header_mod="is--heading-card"
+				header_level="h1"
+				header="{{block_heading}}"
+			]]
+			<div class="{{block_prefix}}inner">
+				<div class="{{block_prefix}}elem">
+					[[azbntple 
+						tpl="/src/block/site/default/faq/panel.html" 
+						block_prefix="faq-panel__"
+					]]
+					[[azbntple 
+						tpl="/src/block/site/default/pagination/panel.html" 
+						block_prefix="pagination-panel__"
+					]]	
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>

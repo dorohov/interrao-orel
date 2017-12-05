@@ -1,0 +1,129 @@
+<nav class="{{class}} navbar {{navbar_mod}}">
+	<div class="{{navbar_prefix}}inner">
+		<div class="container {{navbar_prefix}}container">
+			<div class="row {{navbar_prefix}}row">
+				<div class="cols {{navbar_prefix}}cols  is--header"> 				
+					<div class="{{navbar_prefix}}header">
+						<div class="row {{navbar_prefix}}row-header ">
+							<div class="cols {{navbar_prefix}}cols-header  is--hamburger">
+								<div class="{{navbar_prefix}}hamburger">
+									<button class="{{navbar_prefix}}hamburger-btn hamburger__item" data-toggle="collapse" data-target="#bs-navbar-collapse" aria-expanded="false" data-toggle-nav=".navbar-site" data-body="html" data-collapse-nav=".navbar__collapse">
+										<span class="hamburger__line  is--left"></span>
+										<span class="hamburger__line  is--center"></span>
+										<span class="hamburger__line  is--right"></span>
+									</button>
+								</div>
+							</div>
+							<div class="cols {{navbar_prefix}}cols-header  is--brand">
+								<a class="{{navbar_prefix}}brand" href="{{page.index_legal}}">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="logotip" ]]</a>
+							</div>
+							<div class="cols {{navbar_prefix}}cols-header  is--tel">
+								<a href="tel:{{contacts.phone_tel}}" class="{{navbar_prefix}}tel  is--icon">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="tel" ]]</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cols {{navbar_prefix}}cols  is--collapse">
+					<div class="{{navbar_prefix}}collapse" >
+						<div class="{{navbar_prefix}}collapse-inner">
+							<div class="{{navbar_prefix}}collapse-inner-row  row  is--wrap" >
+								<div class="{{navbar_prefix}}collapse-inner-cols  cols  is--top" >										
+									<div class="row {{navbar_prefix}}collapse-row">
+										<div class="cols {{navbar_prefix}}collapse-cols cols  is--nav">
+											<ul class="{{navbar_prefix}}nav">
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="Тарифы и цены" 
+													navbar_link="{{page.rates_legal}}"
+													navbar_mod="  " 
+												]]	
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="Услуги" 
+													navbar_link="{{page.services_legal}}"
+													navbar_mod="  " 
+												]]	
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="Абонентское обслуживание" 
+													navbar_link="{{page.subscriber_legal}}"
+													navbar_mod="  " 
+												]]	
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="Проверить себя" 
+													navbar_link="{{page.сheckyou}}"
+													navbar_mod="  " 
+												]]	
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/item.html" 
+													navbar_prefix="navbar__" 
+													navbar_name="О компании"
+													navbar_link="{{page.about}}"
+													navbar_mod="  " 
+												]]	
+											</ul>
+										</div>
+										<div class="cols {{navbar_prefix}}collapse-cols cols  is--tel">
+											<div class="{{navbar_prefix}}tel-block">
+												<a href="tel:{{contacts.phone_tel}}" class="{{navbar_prefix}}tel">
+													<span class="{{navbar_prefix}}tel-icon">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="tel" ]]</span>
+													{{contacts.phone}}
+												</a>
+											</div>
+										</div> 
+									</div>
+								</div>
+								<div class="{{navbar_prefix}}collapse-inner-cols  cols  is--bottom" >
+									<div class="{{navbar_prefix}}top-container" >
+										<div class="{{navbar_prefix}}top-row row" >
+											<div class="{{navbar_prefix}}top-cols cols  is--navbar" >
+												<ul class="{{navbar_prefix}}top-nav">
+													<li class="{{navbar_prefix}}top-nav-item">
+														<a href="{{page.index}}" class="{{navbar_prefix}}top-nav-link">
+															<span class="{{navbar_prefix}}top-nav-icon"></span>
+															Физическим лицам
+														</a>
+													</li>
+													<li class="{{navbar_prefix}}top-nav-item  is--active">
+														<a href="{{page.index_legal}}" class="{{navbar_prefix}}top-nav-link">
+															<span class="{{navbar_prefix}}top-nav-icon"></span>
+															Юридическим лицам
+														</a>
+													</li>
+												</ul>		
+											</div>
+											<div class="{{navbar_prefix}}top-cols cols  is--search" >								
+												[[azbntple 
+													tpl="/src/block/site/default/filter/card-search.html" 
+													block_prefix="search-form__"
+													block_mod="  "
+													block_placeholder="Поиск по сайту"
+													block_action="{{page.search}}"
+												]]
+											</div>
+											<div class="{{navbar_prefix}}top-cols cols  is--cabinet" >
+												[[azbntple 
+													tpl="/src/block/site/default/button/link-icon.html" 
+													button_prefix="btn-link__" 
+													button_mod="is--cabinet"
+													button_link="https://lk.interrao-orel.ru/#login"
+													button_name="Личный кабинет"
+													button_icon="icon-user"
+												]] 
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,213 @@
+.filter-panel__{
+	&block{
+		/*padding-bottom: 25px;
+		@media @media-screen {
+			padding-bottom: 2.3vw;
+		}*/
+	}
+	&row{}
+	&cols{}
+}
+.filter-card__{
+	@gutter: 15px;
+	&panel{
+		display: flex;
+		list-style: none;
+		padding: 0;
+		margin: 0 -(@gutter);
+		font-size: @b-fs - 2;
+		&.is--sort{
+			flex-wrap: wrap;
+		}
+		&.is--view{
+			font-size: @b-fs - 4;
+			margin: 0 -(@gutter - 4px);
+		}
+		&.is--search{
+			margin: 0 -(@gutter - 13px);
+			align-items: center;
+		}
+	}
+	&item{
+		padding: 0 (@gutter);
+		position: relative;
+		&::before{
+			content: "";
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			right: 0;
+			height: 1px;
+			bottom: 0;
+			background-color: @orange-light;
+		}
+		&::after{
+			content: "";
+			position: absolute;
+			z-index: 1;
+			top: 50%;
+			right: 0;
+			transform: translate(50%, -50%);
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: @orange-light;
+		}		
+		&.is--view{
+			padding: 0 (@gutter - 4px);
+			&::after{display: none;}
+		}		
+		&.is--search{
+			flex-grow: 1;
+			padding: 0 (@gutter - 13px);
+			&::before,
+			&::after{display: none;}
+		}
+		&.is--name{
+			&::after{display: none;}
+		}
+		&.is--sort{
+			@media @media-size-xs-p {				
+				&::before{display: none;}
+			}
+		}
+		&:first-child{
+			&::before{
+				left: @gutter;
+			}
+			&.is--view{
+				&::before{
+					left: @gutter - 4px;
+				}
+			}
+		}
+		&:last-child{
+			&::before{
+				right: @gutter;
+			}
+			&::after{display: none;}
+			&.is--view{
+				&::before{
+					right: @gutter - 4px
+				}
+			}
+		}
+	}
+	&link{
+		position: relative;
+		z-index: 2;
+		display: block;
+		color: @blue-light;
+		&::before{
+			content: "";
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			right: 0;
+			height: 3px;
+			bottom: -1px;
+			background-color: fadeout(@orange-light, 100%);
+			transition: @trs-site;
+			//transform: translateY(50%);
+		}
+		.filter-card__item.is--active &{
+			color: @b-color-a;
+			&:before{
+				background-color: fadeout(@orange-light, 0%);
+			}
+		}
+	}
+	&input{
+		border: 0;
+		border-bottom: 1px solid @grey-blue;
+		color: @b-color-a;
+		transition: @trs-site;
+		width: 100%;
+		&::-moz-placeholder{
+			color: @grey-blue;
+			font-size: @b-fs - 6;
+		}
+		&::-webkit-input-placeholder {
+			color: @grey-blue;
+			font-size: @b-fs - 6; 
+		}
+		&:focus{
+			border-bottom: 1px solid @b-color-a;
+		}
+		&.is--search{
+			&.is--lg{
+				background-color: fadeout(@b-form-i-bg, 100%);
+				border: 0;
+				border-bottom-width: 1px;   
+				border-bottom-style: solid;   
+				border-bottom-color: @b-form-i-border;   
+				height: 36px;
+				color: @black;
+				font-size: @b-form-i-fs + 2;
+				line-height: @b-form-i-lh;
+				color: @b-form-i-color;
+				transition: @trs-site;
+				width: 100%;
+				border-radius: 0px;	
+				&::-moz-placeholder{
+					transition: @trs-site;
+					font-family: @b-form-i-ff;
+					color: @b-form-i-plh-color;
+					font-size: @b-form-i-fs - 2;
+				}
+				&::-webkit-input-placeholder {
+					transition: @trs-site;
+					font-family: @b-form-i-ff;
+					color: @b-form-i-plh-color;
+					font-size: @b-form-i-fs - 2;
+				}
+				&:focus{ 	
+					border-color: @b-form-i-border-f;
+					outline: none;
+					color: @b-form-i-color-f;
+					&::-moz-placeholder{color: @b-form-i-color-f;}
+					&::-webkit-input-placeholder {color: @b-form-i-color-f;}
+				}
+			}
+		}
+	}
+	&btn{
+		display: block;
+		width: 22px;
+		height: 22px;
+		color: @blue-light;
+	}
+}
+.search-form__{
+	&panel{
+		display: flex;
+	}
+	&item{}
+	&input{
+		background: @b-color-h;
+		border: 0;
+		color: @white;
+		height: 51px;
+		font-size: @b-fs - 6;
+		line-height: @b-lh - 8;
+		padding: 10px 20px 10px;
+		min-width: 180px;
+		@media @media-screen-lg {background: fadeout(@blue-dark, 80%);}
+		&::-moz-placeholder{
+			color: @white;
+			@media @media-screen-lg {color: @blue-light;}
+		}
+		&::-webkit-input-placeholder {
+			color: @white;
+			@media @media-screen-lg {color: @blue-light;}
+		}
+	}
+	&btn{
+		background: @b-color-h;
+		width: 51px;
+		height: 51px;
+		color: @grey-blue;
+		padding: 15px;
+		@media @media-screen-lg {background: fadeout(@blue-dark, 80%);}
+	}
+}

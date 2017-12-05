@@ -1,0 +1,27 @@
+<div class="content-block {{block_prefix}}content-block" role="main"> 
+	<div class="container content-block__container {{block_prefix}}container">
+		<div class="{{block_prefix}}desc">		
+			[[azbntple 
+				tpl="/src/block/site/default/page-header/group.html" 
+				header_prefix="page-header__" 
+				header_mod="is--404"
+				header_level="h1"
+				header="{{block_heading}}"
+				header_small_level="div"
+				header_small="{{block_heading_smal}}"
+			]]
+			<div class="{{block_prefix}}btn">
+				<p>
+					[[azbntple 
+						tpl="/src/block/site/default/button/link.html"
+						button_prefix="btn__" 
+						button_mod=""
+						button_link="{{page.index}}"
+						button_name="Ha главную"
+					]] 
+				</p>
+			</div>
+		</div>
+		<div class="{{block_prefix}}bg" style="background-image: url({{url-path-img}}/default/bg-404.png)"></div>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="content-block {{block_prefix}}content-block" role="main"> 
+	<div class="container content-block__container {{block_prefix}}container">
+		[[azbntple 
+			tpl="/src/block/site/default/breadcrumb/level2.html" 
+			bread_prefix="breadcrumb__"
+			bread_mod="is--heading  is--center"
+			level_1="Абонентское обслуживание" 
+			level_1_link="{{page.subscriber_legal}}"
+			level_2="{{block_heading}}" 
+		]]		
+		[[azbntple 
+			tpl="/src/block/site/default/page-header/heading.html" 
+			header_prefix="page-header__" 
+			header_mod="is--heading  is--center"
+			header_level="h1"
+			header="{{block_heading}}"
+		]]
+		[[azbntple 
+			tpl="/src/block/site/default/category/panel-subscriber-cat-legal.html"
+			block_prefix="category-panel__" 
+		]]
+	</div>	
+</div> 

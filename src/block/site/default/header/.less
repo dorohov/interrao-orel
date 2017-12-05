@@ -1,0 +1,26 @@
+.header-block__{
+	&block{
+		position: relative;
+		@media @media-size-xs {
+			display: none;
+		}
+		@media @media-notsmart {
+			max-height: 440px;
+			///height: 23vw;
+			height: 22.7vw;
+		}
+	}
+	&carousel{}
+	&carousel-control{
+		@media @media-screen {
+			opacity: 0;
+			.header-block__carousel:hover &{opacity: 1;}
+		}
+	}
+	&carousel-inner{}
+	&carousel-item{}
+	&carousel-img{
+		position: relative;
+		z-index: 1;		
+	}
+}

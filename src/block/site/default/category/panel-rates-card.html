@@ -1,0 +1,46 @@
+<div class="{{block_prefix}}panel">
+	<div class="{{block_prefix}}row row  is--wrap  is--gutter  is--jcc">
+		<div class="{{block_prefix}}cols cols  is--cols-screen-4  is--aside">
+			[[azbntple 
+				tpl="/src/block/site/default/navbar/aside-rates.html" 
+				block_prefix="navbar-category__"
+			]]
+		</div>
+		<div class="{{block_prefix}}cols cols  is--cols-12  is--cols-screen-8">
+			[[azbntple 
+				tpl="/src/block/site/default/breadcrumb/level2.html" 
+				bread_prefix="breadcrumb__"
+				bread_mod="is--heading"
+				level_1="Тарифы" 
+				level_1_link="{{page.rates}}" 
+				level_2="{{block_breadcrumb}}" 
+			]]		
+			[[azbntple 
+				tpl="/src/block/site/default/page-header/heading.html" 
+				header_prefix="page-header__" 
+				header_mod="is--heading-card"
+				header_level="h1"
+				header="{{block_heading}}"
+			]]
+			<div class="{{block_prefix}}inner">
+				<div class="{{block_prefix}}elem">
+					<div class="text__block">
+						<p>ООО «Орловский энергосбыт» осуществляет поставку электрической энергии (мощности) гражданам-потребителям и приравненным к ним в соответствии с нормативными правовыми актами в области государственного регулирования тарифов группам (категориям) потребителей (покупателей) в объёме всего фактического потребления по регулируемым ценам (тарифам).</p>
+					</div>
+				</div>	
+				<div class="{{block_prefix}}elem">						
+					[[azbntple 
+						tpl="/src/block/site/default/table/panel-rates.html" 
+						block_prefix="table-block__"
+					]]				
+				</div>	
+				<div class="{{block_prefix}}elem">	
+					[[azbntple 
+						tpl="/src/block/site/default/docs/panel-rates.html" 
+						block_prefix="docs-panel__"
+					]]
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

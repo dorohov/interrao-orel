@@ -1,0 +1,79 @@
+.bg-block__{
+	&block{
+		overflow: hidden;
+		position: relative;
+	}
+	&container{
+		position: relative;
+		z-index: 5;
+	}
+	&item{
+		@media @media-device {display: none;}
+		position: absolute;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		@media @media-size-mdl {
+			&.is--blog-item{display: none;}
+		}
+		&.is--tube-rs{
+			z-index: 1;
+			max-width: 240px;
+			max-height: 680px;
+			width: 13vw;
+			height: 37vw;
+			&.is--form-left{
+				top: -15.5vw;
+				left: -1vw;
+			}
+			&.is--form-right{
+				top: 3.5vw;
+				right: -0.5vw;
+			}
+		}
+		&.is--comma-before{
+			z-index: 1;
+			max-width: 80px;
+			max-height: 80px;    
+			width: 5vw;
+    		height: 5vw;
+			&.is--text{
+				top: -1.5vw;
+				left: -3vw;
+			}
+		}
+		&.is--comma-after{
+			z-index: 1;
+			max-width: 80px;
+			max-height: 80px;    
+			width: 5vw;
+    		height: 5vw;
+			&.is--text{
+				bottom: -1.5vw;
+				right: -0.5vw;
+			}
+		}
+		&.is--r{
+			z-index: 1;
+			max-width: 375px;
+			max-height: 375px;    
+			width: 21vw;
+    		height: 21vw;
+			&.is--text{
+				top: 2vw;
+				left: 8vw;
+			}
+		}
+		&.is--s{
+			z-index: 1;
+			max-width: 375px;
+			max-height: 375px;    
+			width: 21vw;
+    		height: 21vw;
+			&.is--text{
+				top: 45vw;
+				right: 12vw;
+			}
+		}
+	}
+}

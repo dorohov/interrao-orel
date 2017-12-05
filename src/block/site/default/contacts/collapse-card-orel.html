@@ -1,0 +1,18 @@
+<div class="panel {{block_prefix}}panel  {{block_mod}}">
+	<a class="{{block_prefix}}heading  {{block_mod}}" data-toggle="collapse" data-parent="#{{block_group_id}}" href="#pay-{{block_id}}" aria-expanded="false">
+		{{block_heading}}
+		<div class="{{block_prefix}}icon">
+			[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="bread-icon" ]]
+		</div>
+	</a>
+	<div id="pay-{{block_id}}" class="panel-collapse collapse  {{block_prefix}}collapse  {{block_mod}}  {{block_collapse_mod}}">
+		<div class="{{block_prefix}}note">
+			[[azbntple 
+				tpl="/src/block/site/default/contacts/collapse-orel.html" 
+				block_prefix="contacts-card__"
+				block_mod="is--level2"
+				block_group_id="contacts-pay-orel"
+			]]
+		</div>
+	</div>
+</div>
