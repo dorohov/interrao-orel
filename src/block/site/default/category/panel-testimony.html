@@ -9,7 +9,7 @@
 				block_icon="{{url-path-img}}/icon/category-pay-cabinet.png"
 			]]
 		</div>
-		<div class="{{block_prefix}}cols cols  is--cols-6  is--cols-screen-2  is--cols-sm-3">
+		<!--<div class="{{block_prefix}}cols cols  is--cols-6  is--cols-screen-2  is--cols-sm-3">
 			[[azbntple 
 				tpl="/src/block/site/default/category/card.html" 
 				block_prefix="category-card__"
@@ -17,7 +17,7 @@
 				block_name="Сервис передачи показаний"
 				block_icon="{{url-path-img}}/icon/category-pay-testimony.png"
 			]]
-		</div>
+		</div>-->
 		<div class="{{block_prefix}}cols cols  is--cols-6  is--cols-screen-2  is--cols-sm-3">
 			[[azbntple 
 				tpl="/src/block/site/default/category/card.html" 
@@ -25,6 +25,15 @@
 				block_link="{{page.pay_item}}"
 				block_name="С помощью SMS"
 				block_icon="{{url-path-img}}/icon/category-pay-sms.png"
+			]]
+		</div>
+		<div class="{{block_prefix}}cols cols  is--cols-6  is--cols-screen-2  is--cols-sm-3">
+			[[azbntple 
+				tpl="/src/block/site/default/category/card.html" 
+				block_prefix="category-card__"
+				block_link="tel:{{contacts.phone_tel}}"
+				block_name="По телефону"
+				block_icon="{{url-path-img}}/icon/category-pay-tel.png"
 			]]
 		</div>
 		<div class="{{block_prefix}}cols cols  is--cols-6  is--cols-screen-2  is--cols-sm-3">

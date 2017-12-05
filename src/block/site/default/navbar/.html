@@ -89,20 +89,13 @@
 									<div class="{{navbar_prefix}}top-container" >
 										<div class="{{navbar_prefix}}top-row row" >
 											<div class="{{navbar_prefix}}top-cols cols  is--navbar" >
-												<ul class="{{navbar_prefix}}top-nav">
-													<li class="{{navbar_prefix}}top-nav-item  is--active">
-														<a href="{{page.index}}" class="{{navbar_prefix}}top-nav-link">
-															<span class="{{navbar_prefix}}top-nav-icon"></span>
-															Физическим лицам
-														</a>
-													</li>
-													<li class="{{navbar_prefix}}top-nav-item">
-														<a href="{{page.index_legal}}" class="{{navbar_prefix}}top-nav-link">
-															<span class="{{navbar_prefix}}top-nav-icon"></span>
-															Юридическим лицам
-														</a>
-													</li>
-												</ul>		
+												[[azbntple 
+													tpl="/src/block/site/default/navbar/version.html"
+													navbar_prefix="navbar__"   
+													navbar_mod="  "     
+													navbar_action_one="is--active"     
+													navbar_action_two="  "     
+												]] 		
 											</div>
 											<div class="{{navbar_prefix}}top-cols cols  is--search" >								
 												[[azbntple 

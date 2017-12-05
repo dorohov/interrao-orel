@@ -271,8 +271,17 @@
 		@media @media-device-lg {
 			flex-wrap: wrap;
 		}
+		&.is--nav{
+			display: none;
+			background: @b-color-h;
+			padding: 0px 15px;
+			@media @media-device-lg {
+				display: flex;
+			}
+		}
 	}
-	&top-nav-item{}
+	&top-nav-item{
+	}
 	&top-nav-link{
 		display: block;
 		position: relative;
@@ -297,6 +306,16 @@
 			@media @media-screen-lg {
 				background-color: @orange-light;
 				color: @b-color-h;
+			}
+		}		
+		&.is--nav{
+			color: @white;
+			font-size: @b-fs - 6;
+			line-height: @b-lh - 6;	
+			padding: 10px 10px 10px 25px;
+			.navbar__top-nav-item.is--active &{
+				background-color: @orange-light;
+				color: @b-color-h;			
 			}
 		}
 	}
@@ -351,6 +370,19 @@
 			&::after{
 				opacity: 1;
 			}
+		}
+		&.is--nav{			
+			width: 12px;
+			height: 12px;
+			.navbar__top-nav-item.is--active &{	
+				left: 7px;		
+				border: 2px solid @b-color-h;
+				width: 12px;
+				height: 12px;
+				&::before,
+				&::after{display: none;}
+			}
+
 		}
 	}
 	//nav
