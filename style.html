@@ -219,7 +219,7 @@
 	** -->
 	<!-- Кнопка-ссылка -->
 	<div style="margin-bottom: 10px;">		
-		<button type="button" class="btn__item   " data-toggle="modal" data-target="#modal-order"  data-heading="Отправить"><span>Отправить</span></button>
+		<button type="button" class="btn__item   " data-toggle="modal" data-target="#modal-message"  data-heading="Открыть модальку"><span>Открыть модальку</span></button>
 	</div>
 	<div style="margin-bottom: 10px;">		
 		<button type="button" class="btn__item is--invers" data-toggle="modal" data-target="#modal-order"  data-heading="Отправить"><span>Отправить</span></button>
@@ -1071,6 +1071,24 @@
 		</div>
 	</div>
 </footer>
+		<div class="modal fade modal-base__modal" id="modal-message" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog modal-base__dialog">
+		<div class="modal-body modal-base__body" >
+			<button type="button" class="btn-site  modal-base__close  modal-close" data-dismiss="modal" aria-hidden="true">
+				<svg class="icon-svg icon-modal-close" role="img">
+	<use xlink:href="/img/svg/sprite.svg#modal-close"></use>
+</svg>
+			</button>
+			<div class="modal-content modal-base__content">
+				<div class="page-header__block  is--modals">
+	<h4 class="page-header__heading  is--modals"><span>Ваше сообщение успешно отправлено!</span></h4>	
+	<div class="page-header__heading-small  is--modals">Мы свяжемся с вами в ближайшее время.</div>		
+</div>	
+			</div> 	
+			
+		</div>
+	</div>
+</div>
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
