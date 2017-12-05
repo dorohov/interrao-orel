@@ -567,8 +567,13 @@
 		justify-content: center;
 		margin-bottom: 15px;
 		padding: 25px 20px;
+		transition: @trs-site;
 		@media @media-screen {
 			padding: 4vw 2vw;
+		}
+		.category-card__item:hover &{
+			background-color: fadeout(@white10, 10%);
+			//background-color: fadeout(@blue-light, 90%);
 		}
 	}
 	&preview-inner{
@@ -1065,6 +1070,7 @@
 		line-height: @b-lh - 8;
 		padding: 10px 20px 10px;
 		min-width: 180px;
+		border-radius: 0;
 		@media @media-screen-lg {background: fadeout(@blue-dark, 80%);}
 		&::-moz-placeholder{
 			color: @white;
@@ -1080,8 +1086,12 @@
 		width: 51px;
 		height: 51px;
 		color: @grey-blue;
-		padding: 15px;
+		//padding: 15px;
 		@media @media-screen-lg {background: fadeout(@blue-dark, 80%);}
+		svg{
+			display: block;
+			padding: 15px;
+		}
 	}
 }
 .footer__{
@@ -1156,7 +1166,8 @@
 		}
 		&.is--dorohovdesign{
 			@media @media-device {
-				max-width: 110px;
+				//max-width: 110px;
+				max-width: 105px;
 			}
 			@media @media-size-xs-l {
 				//.makeCols(12, 12);
@@ -1234,7 +1245,7 @@
 		color: @blue-light;
 		@media @media-device{
 			padding-bottom: 2px;
-			font-size: 9.5px;
+			font-size: 9px;
 		    text-align: left;
 		}
 		@media @media-screen {max-width: 60px;}
@@ -1246,7 +1257,8 @@
 	&dorohovdesign-logotip{		
 		border: none;
 		display: block;
-		width: 80px;
+		//width: 80px;
+		width: 75px;
 		height: 22px;
 		margin:0 auto;
 		@media @media-size-xs {margin: 0 0 0 auto}
@@ -2364,7 +2376,9 @@ body.rtl .formError .formErrorArrow {
 		transition: @trs-site;
 		left: 7px;
 		@media @media-screen-lg {
-			left: 40px;
+			//left: 40px;
+			//left: 28px;
+			left: 35px;
 		}
 		&::before,
 		&::after{
@@ -2436,6 +2450,7 @@ body.rtl .formError .formErrorArrow {
 			&:last-child{margin-bottom: 0px}
 		}
 		@media @media-screen-lg{
+			&.is--index{display: none;}
 			&::after{
 				content: '';
 				width: 4px;
@@ -2508,14 +2523,14 @@ body.rtl .formError .formErrorArrow {
 		&[href^="tel:"],
 		&[href^="tel:"]:hover, 
 		&[href^="tel:"]:focus{
-			font-weight: 500;
-			font-size: @navbar-fs + 2;
-			line-height: @navbar-lh + 4;
-			color: @navbar-color-tel;
-			display: inline-block;
-			padding-left: 45px;
-			position: relative;
-			@media @media-screen-lg {
+			@media @media-screen-lg {				
+				font-weight: 500;
+				font-size: @navbar-fs + 2;
+				line-height: @navbar-lh + 4;
+				color: @navbar-color-tel;
+				display: inline-block;
+				padding-left: 45px;
+				position: relative;
 				margin-bottom: 11px;
 				//letter-spacing: 1px;
 				.calcFontSize(16, 19, 1200, 1680);
@@ -3014,6 +3029,7 @@ body.rtl .formError .formErrorArrow {
 		display: block;
 		padding: 5px 42px;
 		font-size: @b-fs - 4;
+		line-height: @b-lh - 6;
 		font-weight: 700;
 		&.dropdown-toggle{
 
@@ -3060,8 +3076,9 @@ body.rtl .formError .formErrorArrow {
 		width: 10px;
 		height: 7px;
 		position: absolute!important;
-		top: 50%;
-		transform: translateY(-50%);
+		top: 11px;
+		//top: 50%;
+		//transform: translateY(-50%);
 		left: 25px;
 		.navbar-category__item.open &{
 			transform: translateY(-50%) rotate(180deg);
@@ -3155,12 +3172,14 @@ body.rtl .formError .formErrorArrow {
 			color: @b-color-h;
 		}
 		&.is--close{
+			display: block;
 			color: @b-color-a;
 			width: 28px;
 			height: 28px;
 			border: 2px solid @b-color-a;
 			border-radius: 50%;
-			padding: 8px;
+			//padding: 6px;
+			padding: 0;
 			background: none;
 			color: @b-color-a;
 			&:hover{
@@ -3170,7 +3189,10 @@ body.rtl .formError .formErrorArrow {
 			.navbar-footer__nav-item.active &{
 				background: none;
 			}
-			svg{display: block;}
+			svg{
+				display: block;
+				padding: 8px;
+			}
 		}
 		.navbar-footer__nav-item.active &{
 			background: @orange-wlight;

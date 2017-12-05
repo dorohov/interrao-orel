@@ -192,6 +192,7 @@
 		line-height: @b-lh - 8;
 		padding: 10px 20px 10px;
 		min-width: 180px;
+		border-radius: 0;
 		@media @media-screen-lg {background: fadeout(@blue-dark, 80%);}
 		&::-moz-placeholder{
 			color: @white;
@@ -207,7 +208,11 @@
 		width: 51px;
 		height: 51px;
 		color: @grey-blue;
-		padding: 15px;
+		//padding: 15px;
 		@media @media-screen-lg {background: fadeout(@blue-dark, 80%);}
+		svg{
+			display: block;
+			padding: 15px;
+		}
 	}
 }

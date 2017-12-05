@@ -56,8 +56,13 @@
 		justify-content: center;
 		margin-bottom: 15px;
 		padding: 25px 20px;
+		transition: @trs-site;
 		@media @media-screen {
 			padding: 4vw 2vw;
+		}
+		.category-card__item:hover &{
+			background-color: fadeout(@white10, 10%);
+			//background-color: fadeout(@blue-light, 90%);
 		}
 	}
 	&preview-inner{
