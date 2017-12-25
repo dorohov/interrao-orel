@@ -3,8 +3,8 @@
 $(function() {
 	
 	var yandex_map_div_id = 'yandex-map';
-	//var CMS__TPL_PATH = '/bitrix/templates/azbn7theme';
-	var CMS__TPL_PATH = '';
+	var CMS__TPL_PATH = '/local/templates/azbn7theme';
+	//var CMS__TPL_PATH = '';
 	
 	var yandex_map = $('#' + yandex_map_div_id);
 	
@@ -22,7 +22,8 @@ $(function() {
 				
 				var map_area_block = new ymaps.Map(yandex_map_div_id, map_area_center, {
 					//searchControlProvider: 'yandex#search'
-				});				
+				});
+				
 				//$('.azbn__contacts__item').each(function(index){
 					
 					var block = $(this);
@@ -30,17 +31,83 @@ $(function() {
 					
 					//var polygonLayout_isActive = (index > 0) ? 'is--active' : '';
 					var polygonLayout = ymaps.templateLayoutFactory.createClass('<div class="contacts-panel__location"><svg class="icon-svg icon-map-location" role="img"><use xlink:href="' + CMS__TPL_PATH + '/img/svg/sprite.svg#map-location"></use></svg></div>');		
-					var map_placemark = new ymaps.Placemark([52.969883, 36.045731], {
-						//hintContent: '' 
-					}, {
-						iconLayout: polygonLayout,
-						iconImageSize: [42, 52],
-						iconImageOffset: [-21, -52]
-					});					
-					map_area_block
-						.geoObjects
-							.add(map_placemark)
-					;
+					var clusterLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #024f85; font-weight: bold;">$[properties.geoObjects.length]</div>');
+					
+					var items = $('.azbn__contacts__item');
+					
+					if(items.length) {
+						
+						var geoObjects = [];
+						
+						var clusterer = new ymaps.Clusterer({
+							preset : 'islands#nightClusterIcons',
+							gridSize : 128,
+							clusterIconContentLayout : clusterLayout ,
+							groupByCoordinates : false,
+							clusterDisableClickZoom : false,
+							clusterHideIconOnBalloonOpen : false,
+							geoObjectHideIconOnBalloonOpen : false,
+						});
+						
+						items.each(function(index){
+							
+							var item = $(this);
+							
+							var item_data = JSON.parse(item.attr('data-contact') || {});
+							
+							geoObjects.push(new ymaps.Placemark(item_data.coord, {
+								//hintContent: '' 
+							}, {
+								iconLayout : polygonLayout,
+								iconImageSize : [42, 52],
+								iconImageOffset : [-21, -52],
+								clusterCaption : item_data.title,
+							}));
+							/*
+							map_area_block
+								.geoObjects
+									.add(map_placemark)
+							;
+							*/
+							
+						});
+						
+						/*
+						clusterer.options.set({
+							gridSize: 80,
+							clusterDisableClickZoom: true
+						});
+						*/
+						
+						clusterer.add(geoObjects);
+						map_area_block.geoObjects.add(clusterer);
+						
+						/**
+						* Спозиционируем карту так, чтобы на ней были видны все объекты.
+						*/
+						
+						map_area_block.setBounds(clusterer.getBounds(), {
+							checkZoomRange: true,
+						});
+						
+						
+						$(document.body).on('click.azbn7', '.azbn__contacts__item a', null, function(event){
+							event.preventDefault();
+							
+							var item = $(this).closest('.azbn__contacts__item');
+							var item_data = JSON.parse(item.attr('data-contact') || {});
+							
+							map_area_block.setCenter(item_data.coord);
+							map_area_block.setZoom(16, {
+								smooth : true,
+							});
+							
+						});
+						
+						
+					}
+					
+					
 					
 				//});
 			}
