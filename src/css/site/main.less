@@ -20,13 +20,32 @@ body {
 	@media @media-size-xs{
 		//padding-top: @navbar-top-xs;
 		overflow-x: hidden; 
-		width: 100%;
+		width: 100%;		
+		&.bitrix_is-admin{
+			padding-top: ~"calc(@{navbar-xs} + @{bx-navbar})";
+		} 
+	}
+	@media @media-size-sm{				
+		&.bitrix_is-admin{
+			padding-top: ~"calc(@{navbar-sm} + @{bx-navbar})";
+		} 
+	}
+
+	@media @media-screen{	
+		&.bitrix_is-admin{
+			padding-top: ~"calc(@{navbar-screen} + @{bx-navbar})";
+		} 
 	}
 	@media @media-size-md{padding-top: @navbar-md;}
 	@media @media-screen-lg{padding-top: @navbar-screen;}
 	@media @media-size-lg{padding-top: @navbar-lg;}
 	@media @media-size-xl{padding-top: @navbar-xl;}
-	@media @media-size-xxl{padding-top: @navbar-xxl;}
+	@media @media-size-xxl{
+		padding-top: @navbar-xxl;
+		&.bitrix_is-admin{
+			padding-top: ~"calc(@{navbar-xxl} + @{bx-navbar})";
+		}
+	}
 	@media @media-device-lg{
 		&::before{
 			content: '';
@@ -59,6 +78,18 @@ body {
 	&.is--calc-result{
 		@media @media-device-lg {
 			padding-bottom: 70px;
+		}
+	}
+	&.bitrix_is-admin{
+		#panel{
+			display: block;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 120;
+		    & + .navbar-site{
+		    	top: 39px;
+		    }
 		}
 	}
 }
