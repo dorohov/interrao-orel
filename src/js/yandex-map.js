@@ -18,6 +18,7 @@ $(function() {
 					controls: ['smallMapDefaultSet']
 				},
 				map_area_block;
+			
 			var initYandexMapGlonass = function() {
 				
 				var map_area_block = new ymaps.Map(yandex_map_div_id, map_area_center, {
@@ -26,8 +27,8 @@ $(function() {
 				
 				//$('.azbn__contacts__item').each(function(index){
 					
-					var block = $(this);
-					var block_data = JSON.parse(block.attr('data-contact') || '{}');
+					//var block = $(this);
+					//var block_data = JSON.parse(block.attr('data-contact') || '{}');
 					
 					//var polygonLayout_isActive = (index > 0) ? 'is--active' : '';
 					var polygonLayout = ymaps.templateLayoutFactory.createClass('<div class="contacts-panel__location"><svg class="icon-svg icon-map-location" role="img"><use xlink:href="' + CMS__TPL_PATH + '/img/svg/sprite.svg#map-location"></use></svg></div>');		
@@ -39,23 +40,17 @@ $(function() {
 						
 						var geoObjects = [];
 						
-						var clusterer = new ymaps.Clusterer({
-							preset : 'islands#nightClusterIcons',
-							gridSize : 128,
-							clusterIconContentLayout : clusterLayout ,
-							groupByCoordinates : false,
-							clusterDisableClickZoom : false,
-							clusterHideIconOnBalloonOpen : false,
-							geoObjectHideIconOnBalloonOpen : false,
-						});
-						
 						items.each(function(index){
-							
+							//if(index < 78) {
 							var item = $(this);
 							
 							try {
 								
+								item.attr('data-item-index', index);
+								
 								var item_data = JSON.parse(item.attr('data-contact') || {});
+								
+								//item_data.title = encodeURIComponent(item_data.title);
 								
 								geoObjects.push(new ymaps.Placemark(item_data.coord, {
 									//hintContent: '' 
@@ -72,13 +67,28 @@ $(function() {
 								;
 								*/
 								
+								//console.dir([index, item_data]);
+								
 							} catch(ex) {
 								
 								console.dir(ex);
-								console.dir(item);
+								//console.dir(item);
 								
 							}
-							
+							//}
+						});
+						
+						
+						
+						
+						var clusterer = new ymaps.Clusterer({
+							preset : 'islands#nightClusterIcons',
+							gridSize : 128,
+							clusterIconContentLayout : clusterLayout ,
+							groupByCoordinates : false,
+							clusterDisableClickZoom : false,
+							clusterHideIconOnBalloonOpen : false,
+							geoObjectHideIconOnBalloonOpen : false,
 						});
 						
 						/*
@@ -88,12 +98,20 @@ $(function() {
 						});
 						*/
 						
+						/*
+						var collection = new ymaps.GeoObjectCollection(null, {
+							
+						});
+						*/
+						
+						//collection.add(geoObjects);
 						clusterer.add(geoObjects);
 						map_area_block.geoObjects.add(clusterer);
 						
 						/**
 						* Спозиционируем карту так, чтобы на ней были видны все объекты.
 						*/
+						
 						
 						map_area_block.setBounds(clusterer.getBounds(), {
 							checkZoomRange: true,
