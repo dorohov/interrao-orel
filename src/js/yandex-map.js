@@ -53,22 +53,31 @@ $(function() {
 							
 							var item = $(this);
 							
-							var item_data = JSON.parse(item.attr('data-contact') || {});
-							
-							geoObjects.push(new ymaps.Placemark(item_data.coord, {
-								//hintContent: '' 
-							}, {
-								iconLayout : polygonLayout,
-								iconImageSize : [42, 52],
-								iconImageOffset : [-21, -52],
-								clusterCaption : item_data.title,
-							}));
-							/*
-							map_area_block
-								.geoObjects
-									.add(map_placemark)
-							;
-							*/
+							try {
+								
+								var item_data = JSON.parse(item.attr('data-contact') || {});
+								
+								geoObjects.push(new ymaps.Placemark(item_data.coord, {
+									//hintContent: '' 
+								}, {
+									iconLayout : polygonLayout,
+									iconImageSize : [42, 52],
+									iconImageOffset : [-21, -52],
+									clusterCaption : item_data.title,
+								}));
+								/*
+								map_area_block
+									.geoObjects
+										.add(map_placemark)
+								;
+								*/
+								
+							} catch(ex) {
+								
+								console.dir(ex);
+								console.dir(item);
+								
+							}
 							
 						});
 						
