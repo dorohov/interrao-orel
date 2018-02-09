@@ -4049,10 +4049,13 @@ body.rtl .formError .formErrorArrow {
 			background-color: @white3;	
 			font-size: @b-fs - 2;
 			line-height: @b-lh - 6;
-			font-weight: 700;
+			//font-weight: 700;
 			border-bottom: none;
 			padding: 10px 10px;
-			border-top: 0!important;
+			//border-top: 0!important;
+
+			border: 1px solid @grey-blue!important;
+			//border-right: 1px solid @grey-blue;
 			color: @b-color-a;	
 			text-align: center;	
 			vertical-align: middle!important;	
@@ -4069,6 +4072,7 @@ body.rtl .formError .formErrorArrow {
 			&:last-child{
 				//padding-right: 0;
 				//text-align: right;
+				border-right: 0;
 			}
 			small{
 				text-transform: none;
@@ -4078,7 +4082,6 @@ body.rtl .formError .formErrorArrow {
 			@media print{border: none}
 		}
 	}
-	thead td,
 	thead th,
 	th{
 		font-weight: 700;				
@@ -4088,6 +4091,8 @@ body.rtl .formError .formErrorArrow {
 			th, td{
 				padding: 10px 10px;
 				border-bottom: 1px solid @grey-blue;
+				border-left: 1px solid @grey-blue!important;
+				border-right: 1px solid @grey-blue!important;
 				text-align: center;
 				&:first-child{
 					//padding-left: 0;
