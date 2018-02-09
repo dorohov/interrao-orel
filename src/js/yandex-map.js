@@ -37,6 +37,7 @@ $(function() {
 					
 					if(items.length) {
 						
+						/*
 						var geoObjects = [];
 						
 						var clusterer = new ymaps.Clusterer({
@@ -48,7 +49,8 @@ $(function() {
 							clusterHideIconOnBalloonOpen : false,
 							geoObjectHideIconOnBalloonOpen : false,
 						});
-						
+						*/
+
 						items.each(function(index){
 							
 							var item = $(this);
@@ -57,20 +59,22 @@ $(function() {
 								
 								var item_data = JSON.parse(item.attr('data-contact') || {});
 								
-								geoObjects.push(new ymaps.Placemark(item_data.coord, {
+								//geoObjects.push();
+								
+								var map_placemark = new ymaps.Placemark(item_data.coord, {
 									//hintContent: '' 
 								}, {
 									iconLayout : polygonLayout,
 									iconImageSize : [42, 52],
 									iconImageOffset : [-21, -52],
 									clusterCaption : item_data.title,
-								}));
-								/*
+								});
+								
 								map_area_block
 									.geoObjects
 										.add(map_placemark)
 								;
-								*/
+								
 								
 							} catch(ex) {
 								
@@ -88,17 +92,14 @@ $(function() {
 						});
 						*/
 						
+						/*
 						clusterer.add(geoObjects);
 						map_area_block.geoObjects.add(clusterer);
-						
-						/**
-						* Спозиционируем карту так, чтобы на ней были видны все объекты.
-						*/
 						
 						map_area_block.setBounds(clusterer.getBounds(), {
 							checkZoomRange: true,
 						});
-						
+						*/
 						
 						$(document.body).on('click.azbn7', '.azbn__contacts__item a', null, function(event){
 							event.preventDefault();
