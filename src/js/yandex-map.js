@@ -13,8 +13,8 @@ $(function() {
 			var 
 				map_area = yandex_map, 
 				map_area_center = {		
-					center: [52.971073, 36.052447], // расположение района
-					zoom: 13,
+					center: [52.883481, 36.289510], // расположение района
+					zoom: 8,
 					controls: ['smallMapDefaultSet']
 				},
 				map_area_block;
@@ -30,7 +30,8 @@ $(function() {
 					var block_data = JSON.parse(block.attr('data-contact') || '{}');
 					
 					//var polygonLayout_isActive = (index > 0) ? 'is--active' : '';
-					var polygonLayout = ymaps.templateLayoutFactory.createClass('<div class="contacts-panel__location"><svg class="icon-svg icon-map-location" role="img"><use xlink:href="' + CMS__TPL_PATH + '/img/svg/sprite.svg#map-location"></use></svg></div>');		
+					var polygonLayout = ymaps.templateLayoutFactory.createClass('<div class="contacts-panel__location"><svg class="icon-svg icon-map-location" role="img"><use xlink:href="' + CMS__TPL_PATH + '/img/svg/sprite.svg#map-location"></use></svg></div>');
+					var polygonLayout_active = ymaps.templateLayoutFactory.createClass('<div class="contacts-panel__location is--active"><svg class="icon-svg icon-map-location" role="img"><use xlink:href="' + CMS__TPL_PATH + '/img/svg/sprite.svg#map-location"></use></svg></div>');
 					var clusterLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #024f85; font-weight: bold;">$[properties.geoObjects.length]</div>');
 					
 					var items = $('.azbn__contacts__item');
@@ -59,6 +60,8 @@ $(function() {
 								
 								var item_data = JSON.parse(item.attr('data-contact') || {});
 								
+								item.attr('data-map-index', index);
+								
 								//geoObjects.push();
 								
 								var map_placemark = new ymaps.Placemark(item_data.coord, {
@@ -72,7 +75,7 @@ $(function() {
 								
 								map_area_block
 									.geoObjects
-										.add(map_placemark)
+										.add(map_placemark, index)
 								;
 								
 								
@@ -101,15 +104,36 @@ $(function() {
 						});
 						*/
 						
-						$(document.body).on('click.azbn7', '.azbn__contacts__item a', null, function(event){
+						$(document.body).on('click.azbn7', '.azbn__contacts__item a.azbn7__map-point-link', null, function(event){
 							event.preventDefault();
 							
 							var item = $(this).closest('.azbn__contacts__item');
 							var item_data = JSON.parse(item.attr('data-contact') || {});
+							var item_index = parseInt(item.attr('data-map-index'));
 							
 							map_area_block.setCenter(item_data.coord);
-							map_area_block.setZoom(16, {
+							map_area_block.setZoom(15, {
 								smooth : true,
+							});
+							
+							/*
+							map_area_block.geoObjects.each(function(pm, i){
+								
+								var icon = map_area_block.geoObjects.get(i);
+								
+								icon.properties.set({
+									iconLayout : polygonLayout,
+								});
+								
+							});
+							*/
+							
+							//var icon = map_area_block.geoObjects.get(item_index);
+							
+							//console.dir(icon);
+							
+							map_area_block.geoObjects.get(item_index).options.set({
+								iconLayout : polygonLayout_active,
 							});
 							
 						});
