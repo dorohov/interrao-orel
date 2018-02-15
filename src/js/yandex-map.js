@@ -111,22 +111,23 @@ $(function() {
 							var item_data = JSON.parse(item.attr('data-contact') || {});
 							var item_index = parseInt(item.attr('data-map-index'));
 							
-							map_area_block.setCenter(item_data.coord);
+							map_area_block.setCenter(item_data.coord, 15, {
+								duration : 555,
+							});
+							/*
 							map_area_block.setZoom(15, {
 								smooth : true,
 							});
+							*/
 							
-							/*
-							map_area_block.geoObjects.each(function(pm, i){
+							map_area_block.geoObjects.each(function(pm){
 								
-								var icon = map_area_block.geoObjects.get(i);
-								
-								icon.properties.set({
+								pm.options.set({
 									iconLayout : polygonLayout,
 								});
 								
 							});
-							*/
+							
 							
 							//var icon = map_area_block.geoObjects.get(item_index);
 							
