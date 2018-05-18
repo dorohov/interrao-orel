@@ -77,10 +77,15 @@
 										</div>
 										<div class="cols {{navbar_prefix}}collapse-cols cols  is--tel">
 											<div class="{{navbar_prefix}}tel-block">
-												<a href="tel:{{contacts.phone_tel}}" class="{{navbar_prefix}}tel">
+												<div class="{{navbar_prefix}}tel-inner">
 													<span class="{{navbar_prefix}}tel-icon">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="tel" ]]</span>
-													{{contacts.phone}}
-												</a>
+													<a href="tel:{{contacts.phone_tel}}" class="{{navbar_prefix}}tel">
+														{{contacts.phone}}
+													</a>
+													<a href="tel:{{contacts.phone_tel}}" class="{{navbar_prefix}}tel">
+														{{contacts.phone}}
+													</a>
+												</div>
 											</div>
 										</div> 
 									</div>
@@ -112,7 +117,7 @@
 													button_prefix="btn-link__" 
 													button_mod="is--cabinet"
 													button_link="http://www.interrao-orel.ru/enter/"
-													button_name="Личный кабинет"
+													button_name="Личный кабинет физ.лиц"
 													button_icon="icon-user"
 													button_attr="  "
 												]] 

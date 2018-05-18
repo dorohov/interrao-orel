@@ -2288,7 +2288,7 @@ body.rtl .formError .formErrorArrow {
 		&.is--nav{
 		}
 		&.is--tel{
-			@media @media-device {
+			@media @media-device-lg {
 				display: none;
 			}
 			@media @media-size-xxl {
@@ -2549,10 +2549,18 @@ body.rtl .formError .formErrorArrow {
 	}
 	&tel-block{
 		margin-bottom: 5px;	
-		line-height: @navbar-lh - 4;	
+		line-height: @navbar-lh - 4;
 		@media @media-screen-lg {
 			margin-bottom: 0;
 	  	}
+	}
+	&tel-inner{
+		display: inline-block;
+		@media @media-screen-lg {	
+			padding-left: 45px;
+			position: relative;	
+			margin-bottom: 11px;
+		}
 	}
 	&tel{
 		&, 
@@ -2561,15 +2569,12 @@ body.rtl .formError .formErrorArrow {
 		&[href^="tel:"],
 		&[href^="tel:"]:hover, 
 		&[href^="tel:"]:focus{
-			@media @media-screen-lg {				
+			@media @media-screen-lg {		
 				font-weight: 500;
 				font-size: @navbar-fs + 2;
 				line-height: @navbar-lh + 4;
 				color: @navbar-color-tel;
-				display: inline-block;
-				padding-left: 45px;
-				position: relative;
-				margin-bottom: 11px;
+				display: block;
 				//letter-spacing: 1px;
 				.calcFontSize(16, 19, 1200, 1680);
 				.calcLineHeight(18, 21, 1200, 1680);
